@@ -59,7 +59,7 @@ drone.on('error', error => {
 });
 
 function getRandomName() {
-var coolName = promt("Enter Your Username")
+var coolName = prompt("Enter Your Username")
   return (
     coolName
   );
