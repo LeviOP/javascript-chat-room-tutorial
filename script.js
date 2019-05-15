@@ -6,7 +6,7 @@ userName = "Unnamed User"
 
 const drone = new ScaleDrone(CLIENT_ID, {
   data: { // Will be sent out as clientData via events
-    name: userName,
+    name: prompt("Enter Username"),
     color: getRandomColor(),
   },
 });
