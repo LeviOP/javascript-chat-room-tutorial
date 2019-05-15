@@ -2,9 +2,11 @@
 // If you use this channel ID your app will stop working in the future
 const CLIENT_ID = 'xpB7shez9YJ488Q8';
 
+userName = "Unnamed User"
+
 const drone = new ScaleDrone(CLIENT_ID, {
   data: { // Will be sent out as clientData via events
-    name: getRandomName(),
+    name: userName,
     color: getRandomColor(),
   },
 });
@@ -58,11 +60,9 @@ drone.on('error', error => {
   console.error(error);
 });
 
-function getRandomName() {
-var coolName = prompt("Enter Your Username")
-  return (
-    coolName
-  );
+function setName() {
+  userName = document.getElementById("usrname").value
+  document.getElementById("usrset").style.display = "none"
 }
 
 function getRandomColor() {
