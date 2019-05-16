@@ -98,10 +98,6 @@ function sendMessage() {
   if (value === '') {
     return;
   }
-
-  if (value === '/room') {
-    value = 'You are in the room, \"' + room.name + '\"'
-  }
   DOM.input.value = '';
   drone.publish({
     room: 'observable-room',
