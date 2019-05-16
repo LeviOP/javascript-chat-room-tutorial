@@ -93,7 +93,7 @@ DOM.form.addEventListener('submit', sendMessage);
 
 function sendMessage() {
   const room = drone.subscribe('observable-room');
-  const value = DOM.input.value;
+  var value = DOM.input.value;
   if (value === '') {
     return;
   }
