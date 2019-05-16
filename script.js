@@ -86,7 +86,7 @@ function sendMessage() {
     return;
   }
   if (value === '/roomname') {
-    value = 'Current Room is ' + drone.rooms
+    value = 'Current Room is ' + room.name
   }
   DOM.input.value = '';
   drone.publish({
