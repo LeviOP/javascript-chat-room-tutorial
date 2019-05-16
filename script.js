@@ -92,9 +92,13 @@ const DOM = {
 DOM.form.addEventListener('submit', sendMessage);
 
 function sendMessage() {
+  const room = drone.subscribe('observable-room');
   const value = DOM.input.value;
   if (value === '') {
     return;
+  }
+  if (value === '/room') {
+    value = 'You are in the room, \"' + room.name + '\"'
   }
   DOM.input.value = '';
   drone.publish({
