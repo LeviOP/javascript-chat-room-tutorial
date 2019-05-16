@@ -87,6 +87,7 @@ function sendMessage() {
     return;
   }
   if (value === '/roomname') {
+    var room = drone.subscribe('observable-room');
     value = 'Current Room is ' + room
   }
   DOM.input.value = '';
