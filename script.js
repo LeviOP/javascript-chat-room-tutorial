@@ -8,7 +8,7 @@ const drone = new ScaleDrone(CLIENT_ID, {
   },
 });
 
-const room = drone.subscribe('observable-room');
+var room = drone.subscribe('observable-room');
 
 let members = [];
 
