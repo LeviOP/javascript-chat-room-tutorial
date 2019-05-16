@@ -8,8 +8,6 @@ const drone = new ScaleDrone(CLIENT_ID, {
   },
 });
 
-var room = drone.subscribe('observable-room');
-
 let members = [];
 
 drone.on('open', error => {
