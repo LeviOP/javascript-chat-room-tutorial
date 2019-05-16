@@ -94,9 +94,19 @@ DOM.form.addEventListener('submit', sendMessage);
 
 function sendMessage() {
   const room = drone.subscribe('observable-room');
-  var value = DOM.input.value;
+  const value = DOM.input.value;
   if (value === '') {
     return;
+  }
+  fucntion commandCheck() {
+    const room = drone.subscribe('observable-room');
+    var command = ''
+    if (value === '/room') {
+      command = 'You are in the room, \"' + room.name + '\"'
+    }
+    if (value !=== '') {
+      return (value)
+    }
   }
   DOM.input.value = '';
   drone.publish({
