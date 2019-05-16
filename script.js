@@ -10,8 +10,6 @@ const drone = new ScaleDrone(CLIENT_ID, {
 
 let members = [];
 
-let members = [];
-
 drone.on('open', error => {
   if (error) {
     return console.error(error);
