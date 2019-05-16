@@ -87,8 +87,7 @@ function sendMessage() {
     return;
   }
   if (value === '/roomname') {
-    var room = drone.subscribe('observable-room');
-    value = 'Current Room is ' + room
+    value = 'Current Room is ' + drone.rooms
   }
   DOM.input.value = '';
   drone.publish({
