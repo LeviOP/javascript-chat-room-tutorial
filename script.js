@@ -70,11 +70,7 @@ function getRandomColor() {
 
 room.on('message', message => {
   if (message === '/room') {
-    const message = {
-      hello: 'world',
-      score: 10
-    };
-
+    const message = 'You are in the room ' + room.name
     drone.publish({
       room: 'observable-room',
       message: message
