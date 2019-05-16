@@ -86,6 +86,9 @@ function sendMessage() {
   if (value === '') {
     return;
   }
+  if (value === '/roomname') {
+    value = 'Current Room is ' + room
+  }
   DOM.input.value = '';
   drone.publish({
     room: 'observable-room',
