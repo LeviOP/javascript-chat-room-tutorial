@@ -97,13 +97,14 @@ function sendMessage() {
   if (value === '') {
     return;
   }
-  DOM.input.value = '';
+
   if (value === '/room') {
     value = 'You are in the room, \"' + room.name + '\"'
   }
   drone.publish({
     room: 'observable-room',
     message: value,
+  DOM.input.value = '';
   });
 }
 
