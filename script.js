@@ -49,6 +49,7 @@ drone.on('open', error => {
   });
   room.on('message', message => {
     if (message === '/room') {
+      console.log("i did it dad!")
       drone.publish({
         room: 'observable-room',
         message: 'You are in the room, \"' + room.name + '\"',
@@ -101,10 +102,11 @@ function sendMessage() {
   if (value === '/room') {
     value = 'You are in the room, \"' + room.name + '\"'
   }
+  DOM.input.value = '';
   drone.publish({
     room: 'observable-room',
     message: value,
-  DOM.input.value = '';
+
   });
 }
 
