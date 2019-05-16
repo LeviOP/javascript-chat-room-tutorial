@@ -68,6 +68,20 @@ function getRandomColor() {
   return '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16);
 }
 
+room.on('message', message => {
+  if (message === '/room') {
+    const message = {
+      hello: 'world',
+      score: 10
+    };
+
+    drone.publish({
+      room: 'observable-room',
+      message: message
+    });
+  }
+});
+
 //------------- DOM STUFF
 
 const DOM = {
@@ -84,9 +98,6 @@ function sendMessage() {
   const value = DOM.input.value;
   if (value === '') {
     return;
-  }
-  if (value === '/roomname') {
-    value = 'Current Room is ' + room.name
   }
   DOM.input.value = '';
   drone.publish({
