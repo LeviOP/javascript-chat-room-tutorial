@@ -101,7 +101,7 @@ function sendMessage() {
   function commandCheck() {
     const room = drone.subscribe('observable-room');
     var command = ''
-    if (command === '/room') {
+    if (value === '/room') {
       command = 'You are in the room, \"' + room.name + '\"'
     }
     if (command !== '') {
