@@ -91,7 +91,7 @@ function sendMessage() {
   DOM.input.value = '';
   drone.publish({
     room: 'observable-room',
-    message: 'hi there',
+    message: value,
   });
 }
 
