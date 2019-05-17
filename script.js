@@ -47,15 +47,6 @@ drone.on('open', error => {
       // Message is from server
     }
   });
-  room.on('message', message => {
-    if (message === '/room') {
-      console.log("i did it dad!")
-      drone.publish({
-        room: 'observable-room',
-        message: 'You are in the room, \"' + room.name + '\"',
-      });
-    }
-  });
 });
 
 drone.on('close', event => {
@@ -93,28 +84,14 @@ const DOM = {
 DOM.form.addEventListener('submit', sendMessage);
 
 function sendMessage() {
-  const room = drone.subscribe('observable-room');
   const value = DOM.input.value;
   if (value === '') {
     return;
   }
-  function commandCheck() {
-    const room = drone.subscribe('observable-room');
-    var command = ''
-    if (value === '/room') {
-      command = 'You are in the room, \"' + room.name + '\"'
-    }
-    if (command !== '') {
-      return (command)
-    } else {
-      return (value)
-    }
-  }
   DOM.input.value = '';
   drone.publish({
     room: 'observable-room',
-    message: commandCheck(),
-
+    message: value,
   });
 }
 
