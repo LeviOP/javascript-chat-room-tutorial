@@ -98,7 +98,7 @@ function sendMessage() {
   if (value === '') {
     return;
   }
-  fucntion commandCheck() {
+  function commandCheck() {
     const room = drone.subscribe('observable-room');
     var command = ''
     if (value === '/room') {
