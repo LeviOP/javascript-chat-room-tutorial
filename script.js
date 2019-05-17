@@ -106,6 +106,8 @@ function sendMessage() {
     }
     if (value !=== '') {
       return (value)
+    } else {
+      return (value)
     }
   }
   DOM.input.value = '';
