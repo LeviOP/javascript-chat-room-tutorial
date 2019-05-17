@@ -104,7 +104,7 @@ function sendMessage() {
     if (value === '/room') {
       command = 'You are in the room, \"' + room.name + '\"'
     }
-    if (value !=== '') {
+    if (value !== '') {
       return (value)
     } else {
       return (value)
